@@ -1,6 +1,11 @@
 const colors = {
   $black: '#000000',
   $white: '#ffffff',
+  $beautyBush: '#edafb8',
+  $albescentWhite: '#f7e1d7',
+  $westar: '#dedbd2',
+  $laurel: '#739675',
+  $riverBed: '#4a5759',
 }
 
 const sizes = {
