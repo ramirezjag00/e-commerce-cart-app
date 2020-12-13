@@ -41,6 +41,7 @@ const MainTabRoutes: React.FC = () => {
 const styles = EStyleSheet.create({
   safeAreaView: {
     flex: 1,
+    backgroundColor: '$white',
   },
   tabLabel: {
     fontFamily: '$normal',
