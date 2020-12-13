@@ -15,11 +15,11 @@
     "paths": {
       "@api": ["api/*"],
       "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
+      "@common/*": ["components/common/*"],
       "@constants/*": ["constants/*"],
       "@customtypes/*": ["types/*"],
       "@routes/*": ["routes/*"],
-      "@screens/*": ["screens/*"],
+      "@screens/*": ["components/screens/*"],
       "@theme": ["constants/theme"],
       "@utils/*": ["utils/*"],
     }
