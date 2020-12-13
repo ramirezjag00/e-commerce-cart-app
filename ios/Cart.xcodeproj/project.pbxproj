@@ -19,6 +19,10 @@
 		2DCD954D1E0B4F2C00145EB5 /* CartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CartTests.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		97F1399FB59EFC05CD798147 /* libPods-Cart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D5A7731C524AFD19615B81 /* libPods-Cart.a */; };
+		D71E5073258633A4003E27A7 /* GothamRounded-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D71E506F258633A3003E27A7 /* GothamRounded-BookItalic.otf */; };
+		D71E5074258633A4003E27A7 /* GothamRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D71E5070258633A4003E27A7 /* GothamRounded-Medium.otf */; };
+		D71E5075258633A4003E27A7 /* GothamRounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D71E5071258633A4003E27A7 /* GothamRounded-Bold.otf */; };
+		D71E5076258633A4003E27A7 /* GothamRounded-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = D71E5072258633A4003E27A7 /* GothamRounded-Book.otf */; };
 		DF0630FB4BDE3AFAF7F63153 /* libPods-Cart-CartTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8727818DDACAE4457F09B7F5 /* libPods-Cart-CartTests.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,10 @@
 		A1318AD79A78C437A3254619 /* Pods-Cart-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cart-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Cart-tvOS/Pods-Cart-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AFC7C24FE60FA6E1CEB1E7D6 /* libPods-Cart-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cart-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A13A2F58CFFBCE3B961346 /* Pods-Cart-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cart-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Cart-tvOS/Pods-Cart-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		D71E506F258633A3003E27A7 /* GothamRounded-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRounded-BookItalic.otf"; path = "../../src/assets/fonts/GothamRounded-BookItalic.otf"; sourceTree = "<group>"; };
+		D71E5070258633A4003E27A7 /* GothamRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRounded-Medium.otf"; path = "../../src/assets/fonts/GothamRounded-Medium.otf"; sourceTree = "<group>"; };
+		D71E5071258633A4003E27A7 /* GothamRounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRounded-Bold.otf"; path = "../../src/assets/fonts/GothamRounded-Bold.otf"; sourceTree = "<group>"; };
+		D71E5072258633A4003E27A7 /* GothamRounded-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamRounded-Book.otf"; path = "../../src/assets/fonts/GothamRounded-Book.otf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -161,7 +169,6 @@
 				7BAF9312918D6B787C9D8E83 /* Pods-Cart-tvOSTests.debug.xcconfig */,
 				2634522D1975DAF25DCE1B95 /* Pods-Cart-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +182,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				D71E5065258632F9003E27A7 /* Resources */,
 				13B07FAE1A68108700A75B9A /* Cart */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CartTests */,
@@ -196,6 +204,17 @@
 				2D02E4901E0B4A5D006451C7 /* Cart-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D71E5065258632F9003E27A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D71E5071258633A4003E27A7 /* GothamRounded-Bold.otf */,
+				D71E5072258633A4003E27A7 /* GothamRounded-Book.otf */,
+				D71E506F258633A3003E27A7 /* GothamRounded-BookItalic.otf */,
+				D71E5070258633A4003E27A7 /* GothamRounded-Medium.otf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,8 +359,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71E5076258633A4003E27A7 /* GothamRounded-Book.otf in Resources */,
+				D71E5074258633A4003E27A7 /* GothamRounded-Medium.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				D71E5075258633A4003E27A7 /* GothamRounded-Bold.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D71E5073258633A4003E27A7 /* GothamRounded-BookItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
