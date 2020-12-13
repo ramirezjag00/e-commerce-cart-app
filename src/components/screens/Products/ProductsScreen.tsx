@@ -1,38 +1,33 @@
 import React, { useEffect, useState } from 'react'
-import { ScrollView } from 'react-native'
+import { View } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
-import Product from '@customtypes/product'
+import Categories from './components/Categories/Categories'
 import products from '../../../data/products.json'
-import Categories from './components/Categories'
-
-const DATA_CATEGORIES = products.items
-  .reduce((final: string[], obj: Product) => {
-    if (!final.includes(obj.category)) {
-      return [...final, obj.category]
-    } else {
-      return [...final]
-    }
-  }, [])
-  .sort()
+import Products from './components/Products/Products'
+import categories from '@utils/categories'
 
 const ProductsScreen: React.FC = () => {
-  const [activeCategory, setCategory] = useState<string>('')
+  const [activeCategory, setCategory] = useState<string>(categories[0])
+  const [activeIndex, setActiveIndex] = useState<number>(0)
 
   useEffect(() => {
-    if (DATA_CATEGORIES.length) {
-      setCategory(DATA_CATEGORIES[0])
-    }
-  }, [])
+    setActiveIndex(categories.indexOf(activeCategory))
+  }, [activeCategory])
 
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <Categories
-        data={DATA_CATEGORIES}
+        data={categories}
         setCategory={setCategory}
         activeCategory={activeCategory}
       />
-    </ScrollView>
+      <Products
+        categories={categories}
+        products={products.items}
+        activeIndex={activeIndex}
+      />
+    </View>
   )
 }
 
