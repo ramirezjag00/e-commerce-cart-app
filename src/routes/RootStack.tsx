@@ -4,16 +4,16 @@ import { createStackNavigator } from '@react-navigation/stack'
 import RootStackParamList from '@customtypes/navigation/root'
 import MainTabs from '@routes/MainTabs'
 
-const Stack = createStackNavigator<RootStackParamList>()
+const RootStack = createStackNavigator<RootStackParamList>()
 
-const RootStack: React.FC = () => {
+const RootStackRoutes: React.FC = () => {
   return (
-    <Stack.Navigator
+    <RootStack.Navigator
       screenOptions={{ headerShown: false }}
       initialRouteName={'Main'}>
-      <Stack.Screen name="Main" component={MainTabs} />
-    </Stack.Navigator>
+      <RootStack.Screen name="Main" component={MainTabs} />
+    </RootStack.Navigator>
   )
 }
 
-export default RootStack
+export default RootStackRoutes
