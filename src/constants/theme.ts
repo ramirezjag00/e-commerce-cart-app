@@ -6,6 +6,7 @@ const colors = {
   $westar: '#dedbd2',
   $laurel: '#739675',
   $riverBed: '#4a5759',
+  $mercury: '#eaeaea',
 }
 
 const sizes = {
