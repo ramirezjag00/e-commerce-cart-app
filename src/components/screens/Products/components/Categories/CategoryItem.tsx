@@ -8,7 +8,7 @@ interface Props {
   title: string
 }
 
-const CategoryItem: React.FC<Props> = (props) => {
+const ProductItem: React.FC<Props> = (props) => {
   const { style, onPress, title } = props
   return (
     <TouchableOpacity style={style} onPress={onPress(title)}>
@@ -18,14 +18,13 @@ const CategoryItem: React.FC<Props> = (props) => {
 }
 
 const styles = EStyleSheet.create({
-  container: {
-    padding: '$s14',
-  },
   title: {
+    color: '$mineShaft',
     fontFamily: '$bold',
     fontSize: '$s16',
     textAlign: 'center',
+    paddingBottom: '$s5',
   },
 })
 
-export default CategoryItem
+export default ProductItem

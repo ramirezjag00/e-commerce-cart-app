@@ -46,6 +46,7 @@ const styles = EStyleSheet.create({
   },
   categoryContainer: {
     padding: '$s14',
+    paddingVertical: '$s5',
   },
   activeCategory: {
     backgroundColor: 'transparent',
