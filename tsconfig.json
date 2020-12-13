@@ -20,6 +20,7 @@
       "@customtypes/*": ["types/*"],
       "@routes/*": ["routes/*"],
       "@screens/*": ["screens/*"],
+      "@theme": ["constants/theme"],
       "@utils/*": ["utils/*"],
     }
   },

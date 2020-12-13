@@ -24,6 +24,7 @@ module.exports = {
           '@customtypes': './src/types',
           '@routes': './src/routes',
           '@screens': './src/screens',
+          '@theme': './src/constants/theme',
           '@utils': './src/utils',
         },
       },
