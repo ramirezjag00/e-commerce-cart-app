@@ -1,5 +1,14 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
+import { Text, View } from 'react-native'
+
+import theme from '@constants/theme'
+
+EStyleSheet.build({
+  ...theme.colors,
+  ...theme.sizes,
+  ...theme.fontFamilies,
+})
 
 const App: React.FC = () => {
   return (
