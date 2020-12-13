@@ -1,5 +1,6 @@
 const colors = {
   $black: '#000000',
+  $mineShaft: '#202020',
   $white: '#ffffff',
   $beautyBush: '#edafb8',
   $albescentWhite: '#f7e1d7',
@@ -10,6 +11,8 @@ const colors = {
 }
 
 const sizes = {
+  $s5: '0.3125rem',
+  $s9: '0.5625rem',
   $s10: '0.625rem',
   $s11: '0.6875rem',
   $s12: '0.75rem',
