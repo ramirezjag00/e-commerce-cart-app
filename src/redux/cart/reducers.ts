@@ -11,7 +11,8 @@ const cartReducer = (
     case CartActionTypes.ADD: {
       if (state.length) {
         const index = state.findIndex(
-          (cartProduct: CartProduct) => cartProduct.id === action.payload.id,
+          (cartProduct: CartProduct) =>
+            cartProduct.item.id === action.payload.item.id,
         )
         if (!action.payload.quantity && index > -1) {
           return state.splice(index, 1)
