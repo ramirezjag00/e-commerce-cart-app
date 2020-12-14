@@ -12,9 +12,11 @@ import Product from '@customtypes/product'
 import ProductItem from './ProductItem'
 import SectionType from '@customtypes/section'
 import ItemLayoutType from '@customtypes/itemLayout'
+import { useTypedSelector } from '@utils/store'
 
 const ITEM_HEIGHT = 75
 const ITEM_PADDING = 200
+const FOOTER_PADDING = 120
 
 interface Props {
   categories: string[]
@@ -43,6 +45,7 @@ const sectionHeader = ({
 const Products: React.FC<Props> = (props) => {
   const { activeIndex, categories, products } = props
   const sectionRef = useRef<SectionList>(null)
+  const cart = useTypedSelector((store) => store.cart)
 
   useEffect(() => {
     if (sectionRef.current) {
@@ -93,6 +96,7 @@ const Products: React.FC<Props> = (props) => {
           index,
         }
       }}
+      ListFooterComponent={cart.length ? <View style={styles.footer} /> : null}
     />
   )
 }
@@ -113,6 +117,9 @@ const styles = EStyleSheet.create({
     fontFamily: '$bold',
     paddingTop: '$s12',
     paddingBottom: '$s12',
+  },
+  footer: {
+    height: FOOTER_PADDING,
   },
 })
 
