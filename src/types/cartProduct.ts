@@ -1,8 +1,9 @@
 import Product from './product'
 
-interface CartProduct extends Product {
+interface CartProduct {
   quantity: number
   amount: number
+  item: Product
 }
 
 export default CartProduct
