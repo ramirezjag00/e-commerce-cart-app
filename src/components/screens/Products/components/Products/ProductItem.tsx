@@ -54,7 +54,7 @@ const styles = EStyleSheet.create({
     flexDirection: 'row',
   },
   brandContainer: {
-    backgroundColor: '$beautyBush',
+    backgroundColor: '$albescentWhite',
     borderRadius: '$s10',
   },
   brand: {
