@@ -23,6 +23,7 @@ module.exports = {
           '@customtypes': './src/types',
           '@routes': './src/routes',
           '@screens': './src/components/screens',
+          '@store': './src/redux',
           '@theme': './src/constants/theme',
           '@utils': './src/utils',
         },

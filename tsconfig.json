@@ -19,6 +19,7 @@
       "@customtypes/*": ["types/*"],
       "@routes/*": ["routes/*"],
       "@screens/*": ["components/screens/*"],
+      "@store/*": ["redux/*"],
       "@theme": ["constants/theme"],
       "@utils/*": ["utils/*"],
     }
