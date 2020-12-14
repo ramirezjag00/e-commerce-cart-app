@@ -1,6 +1,8 @@
 import React from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
+import { useThunkDispatch } from '@utils/store'
+import { addProductToCart } from '@store/cart/actions'
 
 import Product from '@customtypes/product'
 
@@ -9,7 +11,13 @@ interface Props {
 }
 
 const CategoryItem: React.FC<Props> = (props) => {
-  const { price, name, brand } = props.item
+  const { item } = props
+  const { price, name, brand } = item
+  const dispatch = useThunkDispatch()
+  const cartProduct = { item, quantity: 1, amount: price }
+  const onPress = (): void => {
+    dispatch(addProductToCart(cartProduct))
+  }
   return (
     <View style={styles.container}>
       <View style={styles.details}>
@@ -21,7 +29,7 @@ const CategoryItem: React.FC<Props> = (props) => {
           <Text style={styles.price}>₱{price.toFixed(2)}</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.cartButton}>
+      <TouchableOpacity onPress={onPress} style={styles.cartButton}>
         <Text style={styles.cartButtonLabel}>ADD TO CART</Text>
       </TouchableOpacity>
     </View>
