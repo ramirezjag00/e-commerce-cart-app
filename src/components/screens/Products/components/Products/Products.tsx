@@ -1,10 +1,20 @@
 import React, { ReactElement, useEffect, useRef } from 'react'
-import { View, SectionList, Text, SectionListData } from 'react-native'
+import {
+  View,
+  SectionList,
+  Text,
+  SectionListData,
+  DefaultSectionT,
+} from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
 import Product from '@customtypes/product'
 import ProductItem from './ProductItem'
 import SectionType from '@customtypes/section'
+import ItemLayoutType from '@customtypes/itemLayout'
+
+const ITEM_HEIGHT = 75
+const ITEM_PADDING = 200
 
 interface Props {
   categories: string[]
@@ -71,6 +81,18 @@ const Products: React.FC<Props> = (props) => {
       renderSectionHeader={sectionHeader}
       stickySectionHeadersEnabled={false}
       scrollEventThrottle={16}
+      initialNumToRender={100}
+      initialScrollIndex={activeIndex}
+      getItemLayout={(
+        _data: SectionListData<Product, DefaultSectionT>[] | null,
+        index: number,
+      ): ItemLayoutType => {
+        return {
+          length: ITEM_HEIGHT,
+          offset: ITEM_HEIGHT * index + ITEM_PADDING,
+          index,
+        }
+      }}
     />
   )
 }
