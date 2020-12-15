@@ -1,8 +1,9 @@
-import { useTypedSelector } from '@utils/store'
 import React, { useEffect, useState } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
+import { useTypedSelector } from '@utils/store'
 
 const CartButton: React.FC = () => {
   const cart = useTypedSelector((store) => store.cart)
