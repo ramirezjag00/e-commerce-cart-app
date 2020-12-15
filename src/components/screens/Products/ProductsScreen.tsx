@@ -8,18 +8,22 @@ import Products from './components/Products/Products'
 import categories from '@utils/categories'
 import { useTypedSelector } from '@utils/store'
 import CartButton from './components/CartButton'
+import Search from './components/Search'
 
 const ProductsScreen: React.FC = () => {
   const [activeCategory, setCategory] = useState<string>(categories[0])
   const [activeIndex, setActiveIndex] = useState<number>(0)
+  const [value, setValue] = useState<string>('')
   const cart = useTypedSelector((store) => store.cart)
+  const onChangeSearchInput = (input: string): void => setValue(input)
 
   useEffect(() => {
     setActiveIndex(categories.indexOf(activeCategory))
-  }, [activeCategory])
+  }, [activeCategory, value])
 
   return (
     <View style={styles.container}>
+      <Search value={value} onChangeSearchInput={onChangeSearchInput} />
       <Categories
         data={categories}
         setCategory={setCategory}
