@@ -8,6 +8,7 @@ const colors = {
   $laurel: '#739675',
   $riverBed: '#4a5759',
   $mercury: '#eaeaea',
+  $boulder: '#7a7a7a',
 }
 
 const sizes = {
