@@ -1,11 +1,11 @@
 import CartProduct from '@customtypes/cartProduct'
-import { AddProductToCartType, CartActionTypes } from './types'
+import { UpdateCartType, CartActionTypes } from './types'
 
-const addProductToCart = (product: CartProduct): AddProductToCartType => {
+const updateCart = (product: CartProduct): UpdateCartType => {
   return {
-    type: CartActionTypes.ADD,
+    type: CartActionTypes.UPDATE_CART,
     payload: product,
   }
 }
 
-export { addProductToCart }
+export { updateCart }

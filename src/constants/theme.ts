@@ -11,7 +11,11 @@ const colors = {
 }
 
 const sizes = {
+  $s3: '0.1875rem',
+  $s4: '0.25rem',
   $s5: '0.3125rem',
+  $s7: '0.4375rem',
+  $s8: '0.5rem',
   $s9: '0.5625rem',
   $s10: '0.625rem',
   $s11: '0.6875rem',
@@ -24,6 +28,7 @@ const sizes = {
   $s18: '1.125rem',
   $s19: '1.1875rem',
   $s20: '1.25rem',
+  $s25: '1.5625rem',
 }
 
 const fontFamilies = {

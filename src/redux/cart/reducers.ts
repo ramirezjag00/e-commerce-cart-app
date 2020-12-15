@@ -8,23 +8,29 @@ const cartReducer = (
   action: ActionType,
 ): CartProduct[] => {
   switch (action.type) {
-    case CartActionTypes.ADD: {
+    case CartActionTypes.UPDATE_CART: {
       if (state.length) {
         const index = state.findIndex(
           (cartProduct: CartProduct) =>
             cartProduct.item.id === action.payload.item.id,
         )
         if (!action.payload.quantity && index > -1) {
-          return state.splice(index, 1)
+          const clonedCart = [...state]
+          clonedCart.splice(index, 1)
+          state = clonedCart
+          return state
         } else if (index === -1) {
           return [...state, action.payload]
-        } else {
-          state[index] = action.payload
+        } else if (action.payload.quantity && index > -1) {
+          const clonedCart = [...state]
+          clonedCart.splice(index, 1, action.payload)
+          state = clonedCart
           return state
         }
       } else {
         return [action.payload]
       }
+      return state
     }
     default: {
       return state

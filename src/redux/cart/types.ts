@@ -1,14 +1,14 @@
 import CartProduct from '@customtypes/cartProduct'
 
 enum CartActionTypes {
-  ADD = 'ADD_PRODUCT_TO_CART',
+  UPDATE_CART = 'UPDATE_CART_CART',
 }
 
-interface AddProductToCartType {
-  type: CartActionTypes.ADD
+interface UpdateCartType {
+  type: CartActionTypes.UPDATE_CART
   payload: CartProduct
 }
 
-type ActionType = AddProductToCartType
+type ActionType = UpdateCartType
 
-export { ActionType, AddProductToCartType, CartActionTypes }
+export { ActionType, UpdateCartType, CartActionTypes }

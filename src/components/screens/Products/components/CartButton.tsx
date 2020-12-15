@@ -1,15 +1,27 @@
-import React from 'react'
+import { useTypedSelector } from '@utils/store'
+import React, { useEffect, useState } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-interface Props {
-  total: number
-  quantity: number
-}
+const CartButton: React.FC = () => {
+  const cart = useTypedSelector((store) => store.cart)
+  const [total, setTotal] = useState(0)
+  const [quantity, setQuantity] = useState(0)
 
-const CartButton: React.FC<Props> = (props) => {
-  const { total, quantity } = props
+  useEffect(() => {
+    const cartTotal = cart.reduce(
+      (totalAmount, cartProduct) => totalAmount + cartProduct.amount,
+      0,
+    )
+    const cartQuantity = cart.reduce(
+      (totalQuantity, cartProduct) => totalQuantity + cartProduct.quantity,
+      0,
+    )
+    setTotal(cartTotal)
+    setQuantity(cartQuantity)
+  }, [cart])
+
   const onPressCartButton = (): void => console.log('hello')
 
   return (

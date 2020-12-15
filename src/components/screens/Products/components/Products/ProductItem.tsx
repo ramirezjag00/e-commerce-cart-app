@@ -1,10 +1,11 @@
 import React from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
-import { useThunkDispatch } from '@utils/store'
-import { addProductToCart } from '@store/cart/actions'
+import { useThunkDispatch, useTypedSelector } from '@utils/store'
+import { updateCart } from '@store/cart/actions'
 
 import Product from '@customtypes/product'
+import CartProduct from '@customtypes/cartProduct'
 
 interface Props {
   item: Product
@@ -13,11 +14,33 @@ interface Props {
 const CategoryItem: React.FC<Props> = (props) => {
   const { item } = props
   const { price, name, brand } = item
+  const cart = useTypedSelector((store) => store.cart)
   const dispatch = useThunkDispatch()
-  const cartProduct = { item, quantity: 1, amount: price }
+  const productCartIndex = cart.findIndex(
+    (cartItem: CartProduct) => cartItem.item.id === item.id,
+  )
   const onPress = (): void => {
-    dispatch(addProductToCart(cartProduct))
+    dispatch(
+      updateCart({
+        item,
+        quantity: 1,
+        amount: price,
+      }),
+    )
   }
+
+  const onPressQuantity = (action: boolean) => (): void => {
+    const modifiedQuantity = action
+      ? cart[productCartIndex].quantity + 1
+      : cart[productCartIndex].quantity - 1
+    const modifiedCartProduct = {
+      item,
+      quantity: modifiedQuantity,
+      amount: price * modifiedQuantity,
+    }
+    dispatch(updateCart(modifiedCartProduct))
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.details}>
@@ -29,9 +52,25 @@ const CategoryItem: React.FC<Props> = (props) => {
           <Text style={styles.price}>₱{price.toFixed(2)}</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={onPress} style={styles.cartButton}>
-        <Text style={styles.cartButtonLabel}>ADD TO CART</Text>
-      </TouchableOpacity>
+      {productCartIndex === -1 ? (
+        <TouchableOpacity onPress={onPress} style={styles.cartButton}>
+          <Text style={styles.cartButtonLabel}>ADD TO CART</Text>
+        </TouchableOpacity>
+      ) : (
+        <View style={styles.controller}>
+          <TouchableOpacity
+            onPress={onPressQuantity(false)}
+            style={styles.quantityController}>
+            <Text style={styles.controllerLabel}>-</Text>
+          </TouchableOpacity>
+          <Text style={styles.quantity}>{cart[productCartIndex].quantity}</Text>
+          <TouchableOpacity
+            onPress={onPressQuantity(true)}
+            style={styles.quantityController}>
+            <Text style={styles.controllerLabel}>+</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   )
 }
@@ -77,6 +116,7 @@ const styles = EStyleSheet.create({
     fontSize: '$s14',
   },
   cartButton: {
+    width: '30%',
     borderWidth: 1,
     borderColor: '$laurel',
     paddingHorizontal: '$s10',
@@ -87,6 +127,31 @@ const styles = EStyleSheet.create({
     color: '$laurel',
     fontFamily: '$normal',
     fontSize: '$s12',
+  },
+  controller: {
+    width: '30%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  quantityController: {
+    height: '$s25',
+    width: '$s25',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '$laurel',
+    borderRadius: '$s5',
+  },
+  controllerLabel: {
+    color: '$laurel',
+    fontFamily: '$normal',
+    fontSize: '$s18',
+  },
+  quantity: {
+    color: '$riverBed',
+    fontFamily: '$normal',
+    fontSize: '$s20',
   },
 })
 
