@@ -80,6 +80,7 @@ const Products: React.FC<Props> = (props) => {
       ref={sectionRef}
       style={styles.container}
       sections={sections}
+      extraData={products}
       keyExtractor={keyExtractor}
       renderSectionHeader={sectionHeader}
       stickySectionHeadersEnabled={false}

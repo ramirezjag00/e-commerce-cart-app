@@ -29,6 +29,7 @@ const Categories: React.FC<Props> = (props) => {
   return (
     <FlatList
       data={data}
+      extraData={data}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       horizontal
