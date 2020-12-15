@@ -40,7 +40,6 @@ const Categories: React.FC<Props> = (props) => {
 
 const styles = EStyleSheet.create({
   flatListContainer: {
-    marginTop: 60,
     borderBottomWidth: 1,
     borderBottomColor: '$mercury',
   },
