@@ -4,8 +4,10 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { useTypedSelector } from '@utils/store'
+import { useNavigation } from '@react-navigation/native'
 
 const CartButton: React.FC = () => {
+  const navigation = useNavigation()
   const cart = useTypedSelector((store) => store.cart)
   const [total, setTotal] = useState(0)
   const [quantity, setQuantity] = useState(0)
@@ -23,7 +25,14 @@ const CartButton: React.FC = () => {
     setQuantity(cartQuantity)
   }, [cart])
 
-  const onPressCartButton = (): void => console.log('hello')
+  const onPressCartButton = (): void => {
+    navigation.navigate('Main', {
+      screen: 'Products',
+      params: {
+        screen: 'CartScreen',
+      },
+    })
+  }
 
   return (
     <View style={styles.cartButtonContainer}>
