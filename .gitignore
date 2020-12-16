@@ -1,3 +1,6 @@
+# Built application files
+android/app/release/*
+
 # OSX
 #
 .DS_Store
