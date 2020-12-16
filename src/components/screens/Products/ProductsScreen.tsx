@@ -28,6 +28,7 @@ const ProductsScreen: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0)
   const cart = useTypedSelector((store) => store.cart)
   const onChangeSearchInput = (input: string): void => setValue(input)
+  const label = 'It seems like we are out of this item'
 
   useEffect(() => {
     if (items.length && categories.length && value.length >= 3) {
@@ -69,7 +70,7 @@ const ProductsScreen: React.FC = () => {
           />
         </Fragment>
       ) : (
-        <Empty />
+        <Empty label={label} />
       )}
       {!!cart.length && <CartButton />}
     </View>

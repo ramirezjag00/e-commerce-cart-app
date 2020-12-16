@@ -3,11 +3,16 @@ import { Text, View } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
-const Empty: React.FC = () => {
+interface Props {
+  label: string
+}
+
+const Empty: React.FC<Props> = (props) => {
+  const { label } = props
   return (
     <View style={styles.container}>
       <Icon name={'cart-off'} size={200} color={EStyleSheet.value('$laurel')} />
-      <Text style={styles.title}>It seems like we are out of this item</Text>
+      <Text style={styles.title}>{label}</Text>
     </View>
   )
 }
