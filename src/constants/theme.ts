@@ -9,6 +9,7 @@ const colors = {
   $riverBed: '#4a5759',
   $mercury: '#eaeaea',
   $boulder: '#7a7a7a',
+  $blackOpaque: 'rgba(0,0,0,0.08)',
 }
 
 const sizes = {
