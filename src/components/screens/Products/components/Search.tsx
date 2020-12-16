@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { TextInput, View, TouchableOpacity } from 'react-native'
+import { TextInput, View, TouchableOpacity, Platform } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -33,7 +33,7 @@ const Search: React.FC<Props> = (props) => {
         style={inputStyles}
         onChangeText={onChangeSearchInput}
         value={value}
-        selectionColor={EStyleSheet.value('$laurel')}
+        selectionColor={EStyleSheet.value('$westar')}
         underlineColorAndroid="transparent"
         autoCorrect={false}
         returnKeyType="search"
@@ -57,8 +57,16 @@ const Search: React.FC<Props> = (props) => {
 const styles = EStyleSheet.create({
   searchContainer: {
     position: 'relative',
-    paddingVertical: rem(10),
-    paddingHorizontal: rem(20),
+    ...Platform.select({
+      ios: {
+        paddingVertical: rem(10),
+        paddingHorizontal: rem(20),
+      },
+      android: {
+        paddingVertical: rem(5),
+        paddingHorizontal: rem(20),
+      },
+    }),
     margin: rem(10),
     borderRadius: rem(8),
     backgroundColor: '$mercury',
@@ -76,8 +84,8 @@ const styles = EStyleSheet.create({
     fontSize: rem(14),
   },
   close: {
-    flex: 1,
     justifyContent: 'flex-end',
+    alignItems: 'center',
   },
 })
 
