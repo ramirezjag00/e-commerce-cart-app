@@ -37,6 +37,7 @@ const ProductsScreen: React.FC = () => {
     } = await productResults(input)
     setItems(results)
     setCategories(resultCategories)
+    setCategory(resultCategories[0])
   }
   const onPressCartButton = (): void => {
     navigation.navigate('Main', {
@@ -51,14 +52,9 @@ const ProductsScreen: React.FC = () => {
 
   useEffect(() => {
     if (items.length && categories.length && value.length >= 3) {
-      setCategory(categories[0])
       setActiveIndex(categories.indexOf(activeCategory))
     }
   }, [activeCategory, categories, items.length, value])
-
-  useEffect(() => {
-    setActiveIndex(categories.indexOf(activeCategory))
-  }, [activeCategory, categories])
 
   useEffect(() => {
     const fetchResults = async (input: string): Promise<void> =>
