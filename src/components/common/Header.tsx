@@ -37,8 +37,6 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '$laurel',
-    borderBottomWidth: 1,
-    borderBottomColor: '$blackOpaque',
   },
   backButton: {
     position: 'absolute',
@@ -46,7 +44,7 @@ const styles = EStyleSheet.create({
   },
   headerTitle: {
     fontSize: '$s20',
-    color: '$mineShaft',
+    color: '$white',
     fontFamily: '$bold',
   },
 })
