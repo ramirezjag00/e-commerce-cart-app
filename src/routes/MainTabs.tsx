@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import MainTabsParamList from '@customtypes/navigation/main'
 import ProductsStackRoutes from '@routes/ProductsStack'
+import Empty from '@common/Empty'
 
 const MainTab = createBottomTabNavigator<MainTabsParamList>()
 
@@ -25,6 +26,14 @@ const MainTabRoutes: React.FC = () => {
                   color={EStyleSheet.value('$laurel')}
                 />
               )
+            } else if (route.name === 'Profile') {
+              return (
+                <Icon
+                  name={focused ? 'account-box' : 'account-box-outline'}
+                  size={EStyleSheet.value('$s25')}
+                  color={EStyleSheet.value('$laurel')}
+                />
+              )
             }
           },
         })}
@@ -33,6 +42,7 @@ const MainTabRoutes: React.FC = () => {
           activeTintColor: EStyleSheet.value('$laurel'),
         }}>
         <MainTab.Screen name="Products" component={ProductsStackRoutes} />
+        <MainTab.Screen name="Profile" component={Empty} />
       </MainTab.Navigator>
     </SafeAreaView>
   )

@@ -9,6 +9,8 @@ interface Props {
 
 const Empty: React.FC<Props> = (props) => {
   const { label } = props
+  const defaultLabel = 'Under Construction: Dev at work'
+
   return (
     <View style={styles.container}>
       <Icon
@@ -16,7 +18,7 @@ const Empty: React.FC<Props> = (props) => {
         size={EStyleSheet.value('$s200')}
         color={EStyleSheet.value('$laurel')}
       />
-      <Text style={styles.title}>{label}</Text>
+      <Text style={styles.title}>{label || defaultLabel}</Text>
     </View>
   )
 }
