@@ -7,6 +7,7 @@ import { updateCart } from '@store/cart/actions'
 import Product from '@customtypes/product'
 import CartProduct from '@customtypes/cartProduct'
 import QuantityController from '@common/QuantityController'
+import Brand from '@common/Brand'
 
 interface Props {
   item: Product
@@ -47,9 +48,7 @@ const CategoryItem: React.FC<Props> = (props) => {
       <View style={styles.details}>
         <Text style={styles.title}>{name}</Text>
         <View style={styles.subDetails}>
-          <View style={styles.brandContainer}>
-            <Text style={styles.brand}>{brand}</Text>
-          </View>
+          <Brand name={brand} />
           <Text style={styles.price}>₱{price.toFixed(2)}</Text>
         </View>
       </View>
@@ -91,16 +90,6 @@ const styles = EStyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-  },
-  brandContainer: {
-    backgroundColor: '$albescentWhite',
-    borderRadius: '$s10',
-  },
-  brand: {
-    fontFamily: '$normal',
-    paddingHorizontal: '$s10',
-    paddingVertical: '$s5',
-    fontSize: '$s10',
   },
   price: {
     alignSelf: 'center',
