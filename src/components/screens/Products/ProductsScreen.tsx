@@ -49,7 +49,8 @@ const ProductsScreen: React.FC = () => {
     })
   }
   const onChangeSearchInput = (input: string): void => setValue(input)
-  const label = 'It seems like we are out of this item'
+  const label =
+    'It seems like we are out of this item. Please try another keyword.'
 
   useEffect(() => {
     setActiveIndex(categories.indexOf(activeCategory))

@@ -14,7 +14,7 @@ const SCREEN_WIDTH = Dimensions.get('screen').width
 const CartScreen: React.FC = () => {
   const cart = useTypedSelector((store) => store.cart)
   const label =
-    'It seems like your cart is empty. Go back and add products on your cart'
+    'It seems like your cart is empty. Go back and add products on your cart.'
   const onPressCheckout = (): void => Alert.alert('Go to checkout page!')
 
   return (
