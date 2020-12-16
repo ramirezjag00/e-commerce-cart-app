@@ -104,6 +104,8 @@ const styles = EStyleSheet.create({
     paddingHorizontal: rem(10),
     paddingVertical: rem(10),
     borderRadius: rem(5),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cartButtonLabel: {
     color: '$laurel',
