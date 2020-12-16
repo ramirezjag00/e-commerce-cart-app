@@ -59,7 +59,7 @@ const CategoryItem: React.FC<Props> = (props) => {
       ) : (
         <QuantityController
           onPress={onPressQuantity}
-          index={cart[productCartIndex].quantity}
+          quantity={cart[productCartIndex].quantity}
         />
       )}
     </View>

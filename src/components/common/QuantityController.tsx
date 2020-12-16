@@ -4,11 +4,11 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 
 interface Props {
   onPress: (action: boolean) => () => void
-  index: number
+  quantity: number
 }
 
 const QuantityController: React.FC<Props> = (props) => {
-  const { onPress, index } = props
+  const { onPress, quantity } = props
   return (
     <View style={styles.controller}>
       <TouchableOpacity
@@ -16,7 +16,7 @@ const QuantityController: React.FC<Props> = (props) => {
         style={styles.quantityController}>
         <Text style={styles.controllerLabel}>-</Text>
       </TouchableOpacity>
-      <Text style={styles.quantity}>{index}</Text>
+      <Text style={styles.quantity}>{quantity}</Text>
       <TouchableOpacity
         onPress={onPress(true)}
         style={styles.quantityController}>
