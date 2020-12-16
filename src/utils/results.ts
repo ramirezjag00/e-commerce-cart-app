@@ -5,13 +5,13 @@ import asyncFilter from './asyncFilter'
 
 const productResults = async (value: string): Promise<ProductResults> => {
   const filteredByName = await asyncFilter(products.items, (obj: Product) =>
-    obj.name.includes(value),
+    obj.name.toLowerCase().includes(value.toLowerCase()),
   )
   const filteredByBrand = await asyncFilter(products.items, (obj: Product) =>
-    obj.brand.includes(value),
+    obj.brand.toLowerCase().includes(value.toLowerCase()),
   )
   const filteredByCategory = await asyncFilter(products.items, (obj: Product) =>
-    obj.category.includes(value),
+    obj.category.toLowerCase().includes(value.toLowerCase()),
   )
   const mergedResults = [
     ...filteredByName,
