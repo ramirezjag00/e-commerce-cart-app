@@ -17,6 +17,7 @@ const Brand: React.FC<Props> = (props) => {
 
 const styles = EStyleSheet.create({
   brandContainer: {
+    alignSelf: 'flex-start',
     backgroundColor: '$albescentWhite',
     borderRadius: '$s10',
   },
