@@ -4,6 +4,8 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+import rem from '@utils/remSizeCalculator'
+
 interface Props {
   title: string
 }
@@ -20,7 +22,7 @@ const HeaderWhite: React.FC<Props> = (props) => {
       <TouchableOpacity onPress={onPressBack} style={styles.backButton}>
         <Icon
           name={'keyboard-backspace'}
-          size={EStyleSheet.value('$s30')}
+          size={EStyleSheet.value(rem(30))}
           color={EStyleSheet.value('$white')}
         />
       </TouchableOpacity>
@@ -32,7 +34,7 @@ const HeaderWhite: React.FC<Props> = (props) => {
 const styles = EStyleSheet.create({
   container: {
     flexDirection: 'row',
-    height: '$s45',
+    height: rem(45),
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -43,7 +45,7 @@ const styles = EStyleSheet.create({
     left: 10,
   },
   headerTitle: {
-    fontSize: '$s20',
+    fontSize: rem(20),
     color: '$white',
     fontFamily: '$bold',
   },

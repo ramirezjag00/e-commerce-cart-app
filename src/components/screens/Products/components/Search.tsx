@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
-import { TextInput, View } from 'react-native'
+import { TextInput, View, TouchableOpacity } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
+import rem from '@utils/remSizeCalculator'
 
 interface Props {
   value: string
@@ -23,7 +24,7 @@ const Search: React.FC<Props> = (props) => {
       <TouchableOpacity onPress={onFocus}>
         <Icon
           name={'magnify'}
-          size={EStyleSheet.value('$s25')}
+          size={EStyleSheet.value(rem(25))}
           color={EStyleSheet.value('$laurel')}
         />
       </TouchableOpacity>
@@ -44,7 +45,7 @@ const Search: React.FC<Props> = (props) => {
         <TouchableOpacity onPress={onClearForm} style={styles.close}>
           <Icon
             name={'close'}
-            size={EStyleSheet.value('$s25')}
+            size={EStyleSheet.value(rem(25))}
             color={EStyleSheet.value('$boulder')}
           />
         </TouchableOpacity>
@@ -56,23 +57,23 @@ const Search: React.FC<Props> = (props) => {
 const styles = EStyleSheet.create({
   searchContainer: {
     position: 'relative',
-    paddingVertical: '$s10',
-    paddingHorizontal: '$s20',
-    margin: '$s10',
-    borderRadius: '$s8',
+    paddingVertical: rem(10),
+    paddingHorizontal: rem(20),
+    margin: rem(10),
+    borderRadius: rem(8),
     backgroundColor: '$mercury',
     flexDirection: 'row',
     alignItems: 'center',
   },
   searchBox: {
     flex: 1,
-    marginHorizontal: '$s8',
+    marginHorizontal: rem(8),
     color: '$mineShaft',
-    fontSize: '$s16',
+    fontSize: rem(16),
     fontFamily: '$normal',
   },
   placeHolder: {
-    fontSize: '$s14',
+    fontSize: rem(14),
   },
   close: {
     flex: 1,

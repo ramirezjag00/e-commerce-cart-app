@@ -8,6 +8,7 @@ import Product from '@customtypes/product'
 import CartProduct from '@customtypes/cartProduct'
 import QuantityController from '@common/QuantityController'
 import Brand from '@common/Brand'
+import rem from '@utils/remSizeCalculator'
 
 interface Props {
   item: Product
@@ -69,9 +70,9 @@ const CategoryItem: React.FC<Props> = (props) => {
 const styles = EStyleSheet.create({
   container: {
     backgroundColor: '$white',
-    paddingHorizontal: '$s20',
-    paddingVertical: '$s16',
-    borderBottomWidth: '$s1',
+    paddingHorizontal: rem(20),
+    paddingVertical: rem(16),
+    borderBottomWidth: rem(1),
     borderBottomColor: '$mercury',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -79,14 +80,14 @@ const styles = EStyleSheet.create({
   },
   details: {
     flex: 1,
-    paddingRight: '$s20',
+    paddingRight: rem(20),
   },
   title: {
     fontFamily: '$normal',
-    fontSize: '$s14',
+    fontSize: rem(14),
   },
   subDetails: {
-    marginTop: '$s5',
+    marginTop: rem(5),
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
@@ -94,20 +95,20 @@ const styles = EStyleSheet.create({
   price: {
     alignSelf: 'center',
     fontFamily: '$medium',
-    fontSize: '$s14',
+    fontSize: rem(14),
   },
   cartButton: {
     width: '30%',
-    borderWidth: '$s1',
+    borderWidth: rem(1),
     borderColor: '$laurel',
-    paddingHorizontal: '$s10',
-    paddingVertical: '$s10',
-    borderRadius: '$s5',
+    paddingHorizontal: rem(10),
+    paddingVertical: rem(10),
+    borderRadius: rem(5),
   },
   cartButtonLabel: {
     color: '$laurel',
     fontFamily: '$normal',
-    fontSize: '$s12',
+    fontSize: rem(12),
   },
 })
 

@@ -2,6 +2,8 @@ import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
+import rem from '@utils/remSizeCalculator'
+
 interface Props {
   onPress: (action: boolean) => () => void
   quantity: number
@@ -34,23 +36,23 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
   },
   quantityController: {
-    height: '$s25',
-    width: '$s25',
+    height: rem(25),
+    width: rem(25),
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: '$s1',
+    borderWidth: rem(1),
     borderColor: '$laurel',
-    borderRadius: '$s5',
+    borderRadius: rem(5),
   },
   controllerLabel: {
     color: '$laurel',
     fontFamily: '$normal',
-    fontSize: '$s18',
+    fontSize: rem(18),
   },
   quantity: {
     color: '$riverBed',
     fontFamily: '$normal',
-    fontSize: '$s20',
+    fontSize: rem(20),
   },
 })
 

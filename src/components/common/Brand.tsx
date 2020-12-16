@@ -2,6 +2,8 @@ import React from 'react'
 import { Text, View } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
+import rem from '@utils/remSizeCalculator'
+
 interface Props {
   name: string
 }
@@ -19,13 +21,13 @@ const styles = EStyleSheet.create({
   brandContainer: {
     alignSelf: 'flex-start',
     backgroundColor: '$albescentWhite',
-    borderRadius: '$s10',
+    borderRadius: rem(10),
   },
   brand: {
     fontFamily: '$normal',
-    paddingHorizontal: '$s10',
-    paddingVertical: '$s5',
-    fontSize: '$s10',
+    paddingHorizontal: rem(10),
+    paddingVertical: rem(5),
+    fontSize: rem(10),
   },
 })
 

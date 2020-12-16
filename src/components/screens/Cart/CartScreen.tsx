@@ -7,6 +7,7 @@ import OrderSummary from '@common/OrderSummary'
 import Empty from '@common/Empty'
 import { useTypedSelector } from '@utils/store'
 import Button from '@common/Button'
+import rem from '@utils/remSizeCalculator'
 
 const SCREEN_WIDTH = Dimensions.get('screen').width
 
@@ -46,7 +47,7 @@ const styles = EStyleSheet.create({
     backgroundColor: '$white',
   },
   buttonStyle: {
-    paddingVertical: '$s18',
+    paddingVertical: rem(18),
   },
 })
 

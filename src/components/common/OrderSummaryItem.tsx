@@ -7,6 +7,7 @@ import { updateCart } from '@store/cart/actions'
 import CartProduct from '@customtypes/cartProduct'
 import QuantityController from './QuantityController'
 import Brand from './Brand'
+import rem from '@utils/remSizeCalculator'
 
 interface Props {
   product: CartProduct
@@ -47,23 +48,23 @@ const styles = EStyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    borderBottomWidth: '$s1',
+    borderBottomWidth: rem(1),
     borderBottomColor: '$mercury',
-    paddingVertical: '$s10',
+    paddingVertical: rem(10),
   },
   detailContainer: {
     flex: 1,
-    paddingHorizontal: '$s10',
+    paddingHorizontal: rem(10),
     justifyContent: 'flex-start',
     flexDirection: 'column',
   },
   productName: {
-    fontSize: '$s14',
+    fontSize: rem(14),
     fontFamily: '$normal',
-    paddingBottom: '$s5',
+    paddingBottom: rem(5),
   },
   amount: {
-    fontSize: '$s14',
+    fontSize: rem(14),
     fontFamily: '$normal',
   },
 })

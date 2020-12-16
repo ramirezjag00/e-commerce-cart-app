@@ -3,6 +3,7 @@ import { FlatList } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
 import CategoryItem from './CategoryItem'
+import rem from '@utils/remSizeCalculator'
 
 interface Props {
   data: string[]
@@ -41,18 +42,18 @@ const Categories: React.FC<Props> = (props) => {
 
 const styles = EStyleSheet.create({
   flatListContainer: {
-    borderBottomWidth: '$s1',
+    borderBottomWidth: rem(1),
     borderBottomColor: '$mercury',
   },
   categoryContainer: {
-    padding: '$s14',
-    paddingVertical: '$s5',
+    padding: rem(14),
+    paddingVertical: rem(5),
   },
   activeCategory: {
     backgroundColor: 'transparent',
     borderBottomColor: '$laurel',
-    borderBottomWidth: '$s3',
-    borderRadius: '$s1h',
+    borderBottomWidth: rem(3),
+    borderRadius: rem(1.5),
   },
 })
 

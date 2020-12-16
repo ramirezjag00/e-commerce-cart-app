@@ -4,6 +4,7 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 
 import { useTypedSelector } from '@utils/store'
 import OrderSummaryItem from './OrderSummaryItem'
+import rem from '@utils/remSizeCalculator'
 
 const OrderSummary: React.FC = () => {
   const cart = useTypedSelector((store) => store.cart)
@@ -30,31 +31,31 @@ const OrderSummary: React.FC = () => {
 
 const styles = EStyleSheet.create({
   container: {
-    paddingTop: '$s25',
-    paddingHorizontal: '$s20',
+    paddingTop: rem(25),
+    paddingHorizontal: rem(20),
   },
   header: {
-    fontSize: '$s30',
+    fontSize: rem(30),
     color: '$mineShaft',
     fontFamily: '$bold',
   },
   tableContainer: {
-    paddingTop: '$s20',
+    paddingTop: rem(20),
   },
   totalContainer: {
-    paddingVertical: '$s20',
+    paddingVertical: rem(20),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomWidth: '$s1',
+    borderBottomWidth: rem(1),
     borderBottomColor: '$mercury',
   },
   totalLabel: {
-    fontSize: '$s18',
+    fontSize: rem(18),
     color: '$mineShaft',
     fontFamily: '$bold',
   },
   totalDetail: {
-    fontSize: '$s14',
+    fontSize: rem(14),
     color: '$mineShaft',
     fontFamily: '$normal',
   },

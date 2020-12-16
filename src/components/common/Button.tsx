@@ -1,7 +1,9 @@
 import React from 'react'
-import { Text, TouchableOpacity, View, ViewStyle } from 'react-native'
+import { Platform, Text, TouchableOpacity, View, ViewStyle } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
+import rem from '@utils/remSizeCalculator'
 
 interface Props {
   onPress: () => void
@@ -20,7 +22,7 @@ const Button: React.FC<Props> = (props) => {
         <View style={styles.icon}>
           <Icon
             name={icon}
-            size={EStyleSheet.value('$s25')}
+            size={EStyleSheet.value(rem(25))}
             color={EStyleSheet.value('$white')}
           />
           {badgeLabel && (
@@ -37,35 +39,43 @@ const Button: React.FC<Props> = (props) => {
 
 const styles = EStyleSheet.create({
   container: {
-    margin: '$s20',
+    margin: rem(20),
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: '$s12',
-    paddingHorizontal: '$s20',
+    paddingVertical: rem(12),
+    paddingHorizontal: rem(20),
     backgroundColor: '$laurel',
-    borderRadius: '$s6',
+    borderRadius: rem(6),
   },
   cartButtonLabel: {
-    fontSize: '$s20',
+    fontSize: rem(20),
     color: '$white',
     fontFamily: '$bold',
   },
   icon: {
     position: 'relative',
-    marginRight: '$s20',
+    marginRight: rem(20),
   },
   badge: {
     backgroundColor: '$beautyBush',
-    borderRadius: '$s12',
+    borderRadius: rem(12),
     position: 'absolute',
     top: -5,
     right: -5,
-    paddingVertical: '$s2',
-    paddingHorizontal: '$s4',
+    ...Platform.select({
+      ios: {
+        paddingVertical: rem(2),
+        paddingHorizontal: rem(4),
+      },
+      android: {
+        paddingVertical: rem(1),
+        paddingHorizontal: rem(4),
+      },
+    }),
   },
   badgeLabel: {
-    fontSize: '$s12',
+    fontSize: rem(12),
     color: '$white',
     fontFamily: '$bold',
   },

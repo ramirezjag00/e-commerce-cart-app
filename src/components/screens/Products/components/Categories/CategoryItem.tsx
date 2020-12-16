@@ -2,6 +2,8 @@ import React from 'react'
 import { Text, TouchableOpacity, ViewStyle } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
+import rem from '@utils/remSizeCalculator'
+
 interface Props {
   style: ViewStyle
   onPress: (item: string) => () => void
@@ -21,9 +23,9 @@ const styles = EStyleSheet.create({
   title: {
     color: '$mineShaft',
     fontFamily: '$bold',
-    fontSize: '$s16',
+    fontSize: rem(16),
     textAlign: 'center',
-    paddingBottom: '$s5',
+    paddingBottom: rem(5),
   },
 })
 

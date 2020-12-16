@@ -12,51 +12,6 @@ const colors = {
   $blackOpaque: 'rgba(0,0,0,0.08)',
 }
 
-const sizes = {
-  $s1h: '0.09375rem',
-  $s1: '0.0625rem',
-  $s2: '0.125rem',
-  $s3: '0.1875rem',
-  $s4: '0.25rem',
-  $s5: '0.3125rem',
-  $s6: '0.375rem',
-  $s7: '0.4375rem',
-  $s8: '0.5rem',
-  $s9: '0.5625rem',
-  $s10: '0.625rem',
-  $s11: '0.6875rem',
-  $s12: '0.75rem',
-  $s13: '0.8125rem',
-  $s14: '0.875rem',
-  $s15: '0.9375rem',
-  $s16: '1rem',
-  $s17: '1.0625rem',
-  $s18: '1.125rem',
-  $s19: '1.1875rem',
-  $s20: '1.25rem',
-  $s21: '1.3125rem',
-  $s22: '1.375rem',
-  $s24: '1.5rem',
-  $s25: '1.5625rem',
-  $s26: '1.625',
-  $s27: '1.6875rem',
-  $s28: '1.75rem',
-  $s29: '1.8125rem',
-  $s30: '1.875rem',
-  $s31: '1.9375rem',
-  $s32: '2rem',
-  $s33: '2.0625rem',
-  $s34: '2.125rem',
-  $s35: '2.1875rem',
-  $s36: '2.25rem',
-  $s37: '2.3125rem',
-  $s38: '2.375rem',
-  $s39: '2.4375rem',
-  $s40: '2.5rem',
-  $s45: '2.8125rem',
-  $s200: '12.5rem',
-}
-
 const fontFamilies = {
   $normal: 'GothamRounded-Book',
   $bold: 'GothamRounded-Bold',
@@ -66,8 +21,7 @@ const fontFamilies = {
 
 const theme = {
   colors,
-  sizes,
   fontFamilies,
 }
 
-export default theme
+export { theme as default }

@@ -10,7 +10,6 @@ import RootStack from '@routes/RootStack'
 
 EStyleSheet.build({
   ...theme.colors,
-  ...theme.sizes,
   ...theme.fontFamilies,
 })
 

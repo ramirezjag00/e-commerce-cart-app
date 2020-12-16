@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import MainTabsParamList from '@customtypes/navigation/main'
 import ProductsStackRoutes from '@routes/ProductsStack'
 import Empty from '@common/Empty'
+import rem from '@utils/remSizeCalculator'
 
 const MainTab = createBottomTabNavigator<MainTabsParamList>()
 
@@ -22,7 +23,7 @@ const MainTabRoutes: React.FC = () => {
               return (
                 <Icon
                   name={focused ? 'shopping' : 'shopping-outline'}
-                  size={EStyleSheet.value('$s25')}
+                  size={EStyleSheet.value(rem(25))}
                   color={EStyleSheet.value('$laurel')}
                 />
               )
@@ -30,7 +31,7 @@ const MainTabRoutes: React.FC = () => {
               return (
                 <Icon
                   name={focused ? 'account-box' : 'account-box-outline'}
-                  size={EStyleSheet.value('$s25')}
+                  size={EStyleSheet.value(rem(25))}
                   color={EStyleSheet.value('$laurel')}
                 />
               )

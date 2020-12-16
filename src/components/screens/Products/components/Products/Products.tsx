@@ -13,6 +13,7 @@ import ProductItem from './ProductItem'
 import SectionType from '@customtypes/section'
 import ItemLayoutType from '@customtypes/itemLayout'
 import { useTypedSelector } from '@utils/store'
+import rem from '@utils/remSizeCalculator'
 
 const ITEM_HEIGHT = 75
 const ITEM_PADDING = 200
@@ -107,17 +108,17 @@ const styles = EStyleSheet.create({
     backgroundColor: '$white',
   },
   sectionHeaderContainer: {
-    borderBottomWidth: '$s1',
+    borderBottomWidth: rem(1),
     borderBottomColor: '$mercury',
-    paddingLeft: '$s20',
+    paddingLeft: rem(20),
     backgroundColor: '$white',
   },
   sectionHeaderText: {
-    fontSize: '$s20',
+    fontSize: rem(20),
     color: '$mineShaft',
     fontFamily: '$bold',
-    paddingTop: '$s12',
-    paddingBottom: '$s12',
+    paddingTop: rem(12),
+    paddingBottom: rem(12),
   },
   footer: {
     height: FOOTER_PADDING,
