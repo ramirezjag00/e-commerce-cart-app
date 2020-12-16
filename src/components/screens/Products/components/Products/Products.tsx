@@ -107,7 +107,7 @@ const styles = EStyleSheet.create({
     backgroundColor: '$white',
   },
   sectionHeaderContainer: {
-    borderBottomWidth: 1,
+    borderBottomWidth: '$s1',
     borderBottomColor: '$mercury',
     paddingLeft: '$s20',
     backgroundColor: '$white',

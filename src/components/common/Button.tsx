@@ -18,7 +18,11 @@ const Button: React.FC<Props> = (props) => {
     <TouchableOpacity onPress={onPress} style={containerStyle}>
       {icon && (
         <View style={styles.icon}>
-          <Icon name={icon} size={25} color={EStyleSheet.value('$white')} />
+          <Icon
+            name={icon}
+            size={EStyleSheet.value('$s25')}
+            color={EStyleSheet.value('$white')}
+          />
           {badgeLabel && (
             <View style={styles.badge}>
               <Text style={styles.badgeLabel}>{badgeLabel}</Text>
@@ -40,7 +44,7 @@ const styles = EStyleSheet.create({
     paddingVertical: '$s12',
     paddingHorizontal: '$s20',
     backgroundColor: '$laurel',
-    borderRadius: 6,
+    borderRadius: '$s6',
   },
   cartButtonLabel: {
     fontSize: '$s20',
@@ -57,8 +61,8 @@ const styles = EStyleSheet.create({
     position: 'absolute',
     top: -5,
     right: -5,
-    paddingVertical: 2,
-    paddingHorizontal: 4,
+    paddingVertical: '$s2',
+    paddingHorizontal: '$s4',
   },
   badgeLabel: {
     fontSize: '$s12',

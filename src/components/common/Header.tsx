@@ -20,7 +20,7 @@ const HeaderWhite: React.FC<Props> = (props) => {
       <TouchableOpacity onPress={onPressBack} style={styles.backButton}>
         <Icon
           name={'keyboard-backspace'}
-          size={30}
+          size={EStyleSheet.value('$s30')}
           color={EStyleSheet.value('$white')}
         />
       </TouchableOpacity>
@@ -32,7 +32,7 @@ const HeaderWhite: React.FC<Props> = (props) => {
 const styles = EStyleSheet.create({
   container: {
     flexDirection: 'row',
-    height: 45,
+    height: '$s45',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',

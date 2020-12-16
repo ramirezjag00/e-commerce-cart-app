@@ -21,7 +21,11 @@ const Search: React.FC<Props> = (props) => {
   return (
     <View style={styles.searchContainer}>
       <TouchableOpacity onPress={onFocus}>
-        <Icon name={'magnify'} size={25} color={EStyleSheet.value('$laurel')} />
+        <Icon
+          name={'magnify'}
+          size={EStyleSheet.value('$s25')}
+          color={EStyleSheet.value('$laurel')}
+        />
       </TouchableOpacity>
       <TextInput
         ref={inputRef}
@@ -40,7 +44,7 @@ const Search: React.FC<Props> = (props) => {
         <TouchableOpacity onPress={onClearForm} style={styles.close}>
           <Icon
             name={'close'}
-            size={25}
+            size={EStyleSheet.value('$s25')}
             color={EStyleSheet.value('$boulder')}
           />
         </TouchableOpacity>

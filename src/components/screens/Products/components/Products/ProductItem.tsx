@@ -71,7 +71,7 @@ const styles = EStyleSheet.create({
     backgroundColor: '$white',
     paddingHorizontal: '$s20',
     paddingVertical: '$s16',
-    borderBottomWidth: 1,
+    borderBottomWidth: '$s1',
     borderBottomColor: '$mercury',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -98,7 +98,7 @@ const styles = EStyleSheet.create({
   },
   cartButton: {
     width: '30%',
-    borderWidth: 1,
+    borderWidth: '$s1',
     borderColor: '$laurel',
     paddingHorizontal: '$s10',
     paddingVertical: '$s10',

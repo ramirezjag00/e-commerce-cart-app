@@ -27,7 +27,7 @@ const CartScreen: React.FC = () => {
           <OrderSummary />
           <Button
             onPress={onPressCheckout}
-            label={'CHECKOUT'}
+            label={'GO TO CHECKOUT'}
             style={styles.buttonStyle}
           />
         </Fragment>

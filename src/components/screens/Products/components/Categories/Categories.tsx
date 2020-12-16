@@ -41,7 +41,7 @@ const Categories: React.FC<Props> = (props) => {
 
 const styles = EStyleSheet.create({
   flatListContainer: {
-    borderBottomWidth: 1,
+    borderBottomWidth: '$s1',
     borderBottomColor: '$mercury',
   },
   categoryContainer: {
@@ -51,8 +51,8 @@ const styles = EStyleSheet.create({
   activeCategory: {
     backgroundColor: 'transparent',
     borderBottomColor: '$laurel',
-    borderBottomWidth: 3,
-    borderRadius: 1.5,
+    borderBottomWidth: '$s3',
+    borderRadius: '$s1h',
   },
 })
 

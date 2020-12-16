@@ -38,7 +38,7 @@ const styles = EStyleSheet.create({
     width: '$s25',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
+    borderWidth: '$s1',
     borderColor: '$laurel',
     borderRadius: '$s5',
   },

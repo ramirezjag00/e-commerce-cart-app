@@ -30,11 +30,11 @@ const OrderSummary: React.FC = () => {
 
 const styles = EStyleSheet.create({
   container: {
-    paddingTop: 25,
+    paddingTop: '$s25',
     paddingHorizontal: '$s20',
   },
   header: {
-    fontSize: 30,
+    fontSize: '$s30',
     color: '$mineShaft',
     fontFamily: '$bold',
   },
@@ -45,7 +45,7 @@ const styles = EStyleSheet.create({
     paddingVertical: '$s20',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomWidth: 1,
+    borderBottomWidth: '$s1',
     borderBottomColor: '$mercury',
   },
   totalLabel: {

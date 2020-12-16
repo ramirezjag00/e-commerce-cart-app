@@ -47,7 +47,7 @@ const styles = EStyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    borderBottomWidth: 1,
+    borderBottomWidth: '$s1',
     borderBottomColor: '$mercury',
     paddingVertical: '$s10',
   },

@@ -21,7 +21,7 @@ const MainTabRoutes: React.FC = () => {
               return (
                 <Icon
                   name={focused ? 'shopping' : 'shopping-outline'}
-                  size={25}
+                  size={EStyleSheet.value('$s25')}
                   color={EStyleSheet.value('$laurel')}
                 />
               )
