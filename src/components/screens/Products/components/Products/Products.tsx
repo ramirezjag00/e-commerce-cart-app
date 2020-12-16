@@ -113,7 +113,7 @@ const styles = EStyleSheet.create({
     backgroundColor: '$white',
   },
   sectionHeaderText: {
-    fontSize: '$s16',
+    fontSize: '$s20',
     color: '$mineShaft',
     fontFamily: '$bold',
     paddingTop: '$s12',
