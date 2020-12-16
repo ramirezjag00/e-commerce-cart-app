@@ -1,20 +1,29 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Dimensions, ScrollView } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
 import Header from '@common/Header'
+import OrderSummary from '@common/OrderSummary'
+
+const SCREEN_WIDTH = Dimensions.get('screen').width
 
 const CartScreen: React.FC = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.white}
+      contentContainerStyle={styles.container}
+      showsVerticalScrollIndicator={false}>
       <Header title={'Cart'} />
-    </View>
+      <OrderSummary />
+    </ScrollView>
   )
 }
 
 const styles = EStyleSheet.create({
   container: {
-    flex: 1,
+    paddingBottom: SCREEN_WIDTH * 0.2,
+  },
+  white: {
     backgroundColor: '$white',
   },
 })
