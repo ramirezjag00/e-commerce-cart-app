@@ -38,6 +38,7 @@ const ProductsScreen: React.FC = () => {
     setItems(results)
     setCategories(resultCategories)
     setCategory(resultCategories[0])
+    setActiveIndex(resultCategories.indexOf(resultCategories[0]))
   }
   const onPressCartButton = (): void => {
     navigation.navigate('Main', {
@@ -51,10 +52,8 @@ const ProductsScreen: React.FC = () => {
   const label = 'It seems like we are out of this item'
 
   useEffect(() => {
-    if (items.length && categories.length && value.length >= 3) {
-      setActiveIndex(categories.indexOf(activeCategory))
-    }
-  }, [activeCategory, categories, items.length, value])
+    setActiveIndex(categories.indexOf(activeCategory))
+  }, [activeCategory, categories])
 
   useEffect(() => {
     const fetchResults = async (input: string): Promise<void> =>
