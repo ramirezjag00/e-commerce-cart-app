@@ -6,6 +6,7 @@ import { updateCart } from '@store/cart/actions'
 
 import Product from '@customtypes/product'
 import CartProduct from '@customtypes/cartProduct'
+import QuantityController from '@common/QuantityController'
 
 interface Props {
   item: Product
@@ -57,19 +58,10 @@ const CategoryItem: React.FC<Props> = (props) => {
           <Text style={styles.cartButtonLabel}>ADD TO CART</Text>
         </TouchableOpacity>
       ) : (
-        <View style={styles.controller}>
-          <TouchableOpacity
-            onPress={onPressQuantity(false)}
-            style={styles.quantityController}>
-            <Text style={styles.controllerLabel}>-</Text>
-          </TouchableOpacity>
-          <Text style={styles.quantity}>{cart[productCartIndex].quantity}</Text>
-          <TouchableOpacity
-            onPress={onPressQuantity(true)}
-            style={styles.quantityController}>
-            <Text style={styles.controllerLabel}>+</Text>
-          </TouchableOpacity>
-        </View>
+        <QuantityController
+          onPress={onPressQuantity}
+          index={cart[productCartIndex].quantity}
+        />
       )}
     </View>
   )
@@ -127,31 +119,6 @@ const styles = EStyleSheet.create({
     color: '$laurel',
     fontFamily: '$normal',
     fontSize: '$s12',
-  },
-  controller: {
-    width: '30%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  },
-  quantityController: {
-    height: '$s25',
-    width: '$s25',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '$laurel',
-    borderRadius: '$s5',
-  },
-  controllerLabel: {
-    color: '$laurel',
-    fontFamily: '$normal',
-    fontSize: '$s18',
-  },
-  quantity: {
-    color: '$riverBed',
-    fontFamily: '$normal',
-    fontSize: '$s20',
   },
 })
 
